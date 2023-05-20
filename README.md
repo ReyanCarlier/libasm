@@ -105,4 +105,4 @@ de mémoire mappée
 processus
 - `231`: `exit_group`: termine tous les threads du processus
 
-[Sources :](http://man7.org/linux/man-pages/dir_section_2.html).
+[Sources](http://man7.org/linux/man-pages/dir_section_2.html)
