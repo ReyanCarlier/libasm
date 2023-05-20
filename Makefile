@@ -1,33 +1,34 @@
 NAME = libasm.a
 
+SRCS = src/ft_strlen.s \
+	src/ft_strcpy.s \
+	src/ft_strcmp.s \
+	src/ft_write.s \
+	src/ft_read.s \
+	src/ft_strdup.s
+
+OBJS = $(SRCS:src/%.s=obj/%.o)
+
 NASM = nasm
 NASM_FLAGS = -f elf64
-
-SRCS = ft_strlen.s \
-	ft_strcpy.s \
-	ft_strcmp.s \
-	ft_write.s \
-	ft_read.s \
-	ft_strdup.s
-
-OBJS = $(SRCS:.s=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
-%.o: %.s
-	$(NASM) $(NASM_FLAGS) $<
+obj/%.o: src/%.s
+	@mkdir -p obj
+	@$(NASM) $(NASM_FLAGS) $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	@/bin/rm -f $(OBJS)
+	@/bin/rm -rf obj
 
 fclean: clean
-	rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 
-#bonus:
-
-.PHONY: all clean fclean re #bonus
+.PHONY: all clean fclean re
