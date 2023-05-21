@@ -2,9 +2,9 @@
 ; RSI : Deuxième string (s2)
 
 section .text
-	global ft_strcmp
+	global _ft_strcmp
 
-ft_strcmp:
+_ft_strcmp:
 	mov rax, rdi	; RAX pointe sur le début de s1
 	mov rcx, rsi	; RCX pointe sur le début de s2
 	
