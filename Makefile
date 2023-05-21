@@ -46,7 +46,7 @@ fclean: clean
 re: fclean all
 
 test: $(NAME)
-	$(CC) $(CFLAGS) $(MAIN) -L. -lasm -o $(EXEC) -v
+	$(CC) $(CFLAGS) $(MAIN) -L. -lasm -o $(EXEC)
 	echo "Compilation of test program complete. Run with ./$(EXEC)"
 
 .PHONY: all clean fclean re test
