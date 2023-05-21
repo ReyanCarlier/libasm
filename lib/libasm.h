@@ -12,6 +12,6 @@
 unsigned long	ft_strlen(char *);
 char			*ft_strcpy(char *, char *);
 int				ft_strcmp(char *, char *);
-//char		*ft_strdup(char *);
+char			*ft_strdup(char *);
 
 #endif

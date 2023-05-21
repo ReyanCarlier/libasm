@@ -5,13 +5,19 @@ section .text
 	global _ft_strcpy
 
 _ft_strcpy:
-	xor rcx, rcx	; Initialise le compteur RCX à 0
+	mov		rax, 0					; Initialise RAX à 0
+	jmp 	.copy					; Saute à la fonction copy
 
-.loop:
-	movzx rax, byte [rsi + rcx]	; Charge le byte courant de la string
-	mov byte [rdi + rcx], al	; Enregistre le byte dans RSI
-	inc rcx				; Incrémentation du compteur
-	test al, al			; Test si le byte est null
-	jnz .loop			; S'il n'est pas null, on continue au prochain caractère
+.copy:
+	cmp		byte [rsi + rax], 0		; Compare le caractère de la source avec 0
+	je 		.exit					; Si c'est 0, on arrive à la fin de la chaîne
+	mov		cl, [rsi + rax]			; Sinon, on copie le caractère de la source dans CL
+	mov		[rdi + rax], cl			; On copie CL dans la destination
+	inc		rax						; On incrémente RAX
+	jmp		.copy					; On revient au début de la fonction copy
 
-	ret
+.exit:
+	mov		cl , 0					; On met 0 dans CL (pour le dernier caractère)
+	mov		[rdi + rax], cl			; rdi[rax] = cl = 0
+	mov		rax, rdi				; On met le résultat dans RAX
+	ret								; On retourne le résultat
