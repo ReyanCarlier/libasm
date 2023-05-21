@@ -6,7 +6,7 @@
 int main(void)
 {
     // Test ft_strlen
-    char *str = NULL;
+    char *str = "Hello, World";
     printf("Length of '%s' = %lu\n", str, ft_strlen(str));
     assert(ft_strlen(str) == strlen(str));  // Compare with standard strlen
 
