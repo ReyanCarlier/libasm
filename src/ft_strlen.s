@@ -1,6 +1,7 @@
 section .text
 	global _ft_strlen
 
+; ft_strlen: Renvoie la longueur d'une chaîne de caractères (sans compter le null) dans RAX.
 _ft_strlen:
 	xor rax, rax	; Initialise le compteur (RAX) à 0
 

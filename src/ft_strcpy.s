@@ -4,6 +4,8 @@
 section .text
 	global _ft_strcpy
 
+; ft_strcpy: Copie la chaîne de caractères pointée par src (y compris l'octet nul « \0 » final) dans la chaîne pointée par dest.
+; Le résultat est poussé dans RAX.
 _ft_strcpy:
 	mov		rax, 0					; Initialise RAX à 0
 	jmp 	.copy					; Saute à la fonction copy

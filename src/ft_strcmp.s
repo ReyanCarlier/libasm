@@ -4,6 +4,10 @@
 section .text
 	global _ft_strcmp
 
+; ft_strcmp: Compare deux strings et retourne la différence entre les deux premiers caractères différents.
+; Si les deux strings sont identiques, retourne 0 (RAX = 0)
+; Si s1 > s2, retourne la différence entre le premier caractère de s1 et le premier caractère de s2 (RAX > 0)
+; Si s1 < s2, retourne la différence entre le premier caractère de s1 et le premier caractère de s2 (RAX < 0)
 _ft_strcmp:
 	mov rax, rdi	; RAX pointe sur le début de s1
 	mov rcx, rsi	; RCX pointe sur le début de s2

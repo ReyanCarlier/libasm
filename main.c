@@ -22,5 +22,11 @@ int main(void)
     printf("Comparison of '%s' and '%s' = %d\n", str1, str2, ft_strcmp(str1, str2));
     assert(ft_strcmp(str1, str2) == strcmp(str1, str2));  // Compare with standard strcmp
 
+	// Test ft_strdup
+	char *s1 = "Hello";
+	char *s2 = "World";
+	s1 = ft_strdup(s2);
+	printf("str1 = %s\n", s1);
+
     return 0;
 }
