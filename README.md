@@ -1,5 +1,5 @@
 # libasm
-L'objectif de ce projet est de se familiariser avec le langage assembleur.
+L'objectif de ce projet est de se familiariser avec le langage assembleur (x86-64).
 
 ## Instructions Assembly
 
